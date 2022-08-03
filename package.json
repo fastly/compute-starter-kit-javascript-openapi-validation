@@ -1,0 +1,24 @@
+{
+  "name": "compute-starter-kit-javascript-openapi-validation",
+  "version": "0.3.0",
+  "main": "src/index.js",
+  "author": "oss@fastly.com",
+  "license": "MIT",
+  "engines": {
+    "node": "^16"
+  },
+  "devDependencies": {
+    "core-js": "^3.24.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "@fastly/js-compute": "^0.4.0",
+    "openapi-backend": "^5.3.0"
+  },
+  "scripts": {
+    "prebuild": "webpack",
+    "build": "js-compute-runtime bin/index.js bin/main.wasm",
+    "deploy": "npm run build && fastly compute deploy"
+  }
+}

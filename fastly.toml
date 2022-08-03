@@ -1,0 +1,16 @@
+manifest_version = 2
+name = "OpenAPI Validation for Compute@Edge (JavaScript)"
+description = "Application template for validating requests against an OpenAPI document."
+authors = ["<oss@fastly.com>"]
+language = "javascript"
+
+[setup]
+  [setup.backends]
+    [setup.backends.origin]
+      description = "Application origin"
+      address = "httpbin.org"
+
+[local_server]
+  [local_server.backends]
+    [local_server.backends.origin]
+      url = "https://httpbin.org/"
