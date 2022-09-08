@@ -1,5 +1,5 @@
 manifest_version = 2
-name = "OpenAPI Validation for Compute@Edge (JavaScript)"
+name = "OpenAPI Validation (JS)"
 description = "Application template for validating requests against an OpenAPI document."
 authors = ["<oss@fastly.com>"]
 language = "javascript"
