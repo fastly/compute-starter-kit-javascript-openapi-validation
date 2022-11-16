@@ -17,7 +17,7 @@
     "buffer": "^6.0.3",
     "g": "^2.0.1",
     "https-browserify": "^1.0.0",
-    "openapi-backend": "^5.5.0",
+    "openapi-backend": "^5.6.0",
     "process": "^0.11.10",
     "stream-http": "^3.2.0"
   },
