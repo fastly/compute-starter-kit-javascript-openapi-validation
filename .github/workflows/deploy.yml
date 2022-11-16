@@ -1,7 +1,7 @@
 name: Deploy Compute@Edge Application
 on:
   push:
-    branches: [main]
+    branches: [production]
 
 jobs:
   deploy:
