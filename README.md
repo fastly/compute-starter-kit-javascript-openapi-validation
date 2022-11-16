@@ -15,6 +15,7 @@ An OpenAPI definition is a document (or set of documents) that defines or descri
 This starter kit makes it possible to define custom request handling logic at the edge, based on whether a request matches an OpenAPI definitions. This means:
 
 ✅ Relieving load on origins 
+
 ✅ Improved API security
 
 ## Usage
