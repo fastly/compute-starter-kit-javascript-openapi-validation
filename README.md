@@ -2,7 +2,7 @@
 
 [![Deploy to Fastly](https://deploy.edgecompute.app/button)](https://deploy.edgecompute.app/deploy)
 
-An application template for validating requests against an OpenAPI definition, in JavaScript, for Fastly's Compute@Edge environment. 
+An application template for validating requests against an OpenAPI 3.x definition, in JavaScript, for Fastly's Compute@Edge environment. 
 
 ### OpenAPI, briefly
 
@@ -19,7 +19,11 @@ This starter kit makes it possible to define custom request handling logic at th
 
 ## Usage
 
-### Customizing request handling
+Replace [src/definition.json](./src/definition.json) with your own OpenAPI 3.x definition, and update your origin hostname [fastly.toml](./fastly.toml) by replacing the `url` in `local_server.backends.origin`, and the `address` (hostname) in `setup.backends.origin`.
+
+Then run `fastly compute serve` to try out this Compute@Edge app on your local machine, or `fastly compute publish` to publish a new Compute@Edge service.
+
+### Request handling
 
 The default application behavior is to only forward valid requests to the origin, and return a synthetic HTTP 400 response for invalid requests.
 

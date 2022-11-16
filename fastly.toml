@@ -14,3 +14,4 @@ language = "javascript"
   [local_server.backends]
     [local_server.backends.origin]
       url = "https://httpbin.org/"
+  

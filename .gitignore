@@ -6,6 +6,11 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+# Debug data
+.debug*
+
+.DS_Store
+
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
@@ -102,3 +107,7 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Compute@Edge build artifacts
+pkg
+bin
