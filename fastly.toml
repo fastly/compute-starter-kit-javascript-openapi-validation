@@ -1,18 +1,23 @@
+# This file describes a Fastly Compute@Edge package. To learn more visit:
+# https://developer.fastly.com/reference/fastly-toml/
+
+authors = ["<oss@fastly.com>"]
+description = "Application template for validating requests against an OpenAPI document."
+language = "javascript"
 manifest_version = 2
 name = "OpenAPI Validation (JS)"
-description = "Application template for validating requests against an OpenAPI document."
-authors = ["<oss@fastly.com>"]
-language = "javascript"
-
-[setup]
-  [setup.backends]
-    [setup.backends.origin]
-      description = "Application origin"
-      address = "httpbin.org"
-      port = "443" # HTTPS. Use 80 for HTTP.
+service_id = ""
 
 [local_server]
   [local_server.backends]
     [local_server.backends.origin]
       url = "https://httpbin.org/"
-  
+
+[scripts]
+  build = "npm exec webpack && npm exec js-compute-runtime ./bin/index.js ./bin/main.wasm"
+
+[setup]
+  [setup.backends]
+    [setup.backends.origin]
+      address = "httpbin.org"
+      description = "Application origin"
