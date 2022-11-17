@@ -9,6 +9,7 @@ language = "javascript"
     [setup.backends.origin]
       description = "Application origin"
       address = "httpbin.org"
+      port = "443" # HTTPS. Use 80 for HTTP.
 
 [local_server]
   [local_server.backends]
