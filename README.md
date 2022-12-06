@@ -20,7 +20,7 @@ This starter kit makes it possible to define custom request handling logic at th
 
 ## Usage
 
-Replace [src/definition.json](./src/definition.json) with your own OpenAPI 3.x definition, and change any references to `httpbin.org` to your origin in [fastly.toml](./fastly.toml) – by replacing the `url` in `local_server.backends.origin`, and the `address` (hostname) in `setup.backends.origin`.
+Replace the contents of `src/definition.json` with your own OpenAPI 3.x definition, and change any references to `httpbin.org` to your origin in `fastly.toml` – by replacing the `url` in `local_server.backends.origin`, and the `address` (hostname) in `setup.backends.origin`.
 
 Then run `fastly compute serve` to try out this Compute@Edge app on your local machine, or `fastly compute publish` to publish a new Compute@Edge service.
 
@@ -36,4 +36,4 @@ To forward all requests to the origin, set the constant `REJECT_INVALID_REQUESTS
 
 ## Security issues
 
-Please see our [SECURITY.md](SECURITY.md) for guidance on reporting security-related issues.
+Please see our [SECURITY.md](https://github.com/fastly/compute-starter-kit-javascript-openapi-validation/blob/main/SECURITY.md) for guidance on reporting security-related issues.
