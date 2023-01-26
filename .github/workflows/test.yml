@@ -20,4 +20,4 @@ jobs:
           ${{ runner.os }}-node-
     - run: npm ci
     - name: build
-      run: npm run build
+      run: npm exec webpack && npm exec js-compute-runtime ./bin/index.js ./bin/main.wasm
