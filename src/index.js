@@ -15,6 +15,9 @@ addEventListener("fetch", (event) => event.respondWith(handleRequest(event)));
 
 // Validates all requests against an OpenAPI definition.
 async function handleRequest(event) {
+  // Log service version
+  console.log("FASTLY_SERVICE_VERSION:", fastly.env.get('FASTLY_SERVICE_VERSION' || ''));
+  
   // Initialize an OpenAPI validator using the OpenAPI definition.
   // https://github.com/anttiviljami/openapi-backend/blob/master/DOCS.md#new-openapivalidatoropts
   const openAPIValidator = new OpenAPIValidator({
