@@ -13,12 +13,17 @@
     "webpack-cli": "^5.0.1"
   },
   "dependencies": {
-    "@fastly/js-compute": "^1.3.0",
+    "@fastly/js-compute": "^1.3.2",
     "buffer": "^6.0.3",
     "g": "^2.0.1",
     "https-browserify": "^1.0.0",
     "openapi-backend": "^5.6.2",
     "process": "^0.11.10",
     "stream-http": "^3.2.0"
+  },
+  "scripts": {
+    "prebuild": "webpack",
+    "build": "js-compute-runtime bin/index.js bin/main.wasm",
+    "deploy": "npm run build && fastly compute deploy"
   }
 }
