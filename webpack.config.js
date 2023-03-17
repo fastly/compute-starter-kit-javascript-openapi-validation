@@ -13,16 +13,10 @@ module.exports = {
     libraryTarget: "this",
   },
   module: {
-    // Asset modules are modules that allow the use of asset files (fonts, icons, etc)
-    // without additional configuration or dependencies.
-    rules: [
-      // asset/source exports the source code of the asset.
-      // Usage: e.g., import notFoundPage from "./page_404.html"
-      {
-        test: /\.(txt|html)/,
-        type: "asset/source",
-      },
-    ],
+    // Loaders go here.
+    // e.g., ts-loader for TypeScript
+    // rules: [
+    // ],
   },
   resolve: {
     fallback: {
@@ -40,8 +34,15 @@ module.exports = {
     // Used for, e.g., any cross-platform WHATWG,
     // or core nodejs modules needed for your application.
     new webpack.ProvidePlugin({
-      URL: "core-js/web/url",
       process: "process/browser",
     }),
+  ],
+  externals: [
+    ({request,}, callback) => {
+      if (/^fastly:.*$/.test(request)) {
+        return callback(null, 'commonjs ' + request);
+      }
+      callback();
+    }
   ],
 };

@@ -7,13 +7,13 @@ language = "javascript"
 manifest_version = 2
 name = "OpenAPI Validation (JS)"
 
+[scripts]
+  build = "npm run build"
+
 [local_server]
   [local_server.backends]
     [local_server.backends.origin]
       url = "https://httpbin.org/"
-
-[scripts]
-  build = "npm run build"
 
 [setup]
   [setup.backends]
