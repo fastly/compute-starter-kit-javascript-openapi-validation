@@ -1,9 +1,13 @@
 /// <reference types="@fastly/js-compute" />
 
+import { env } from "fastly:env";
+import { includeBytes } from "fastly:experimental";
 import { OpenAPIValidator } from "openapi-backend";
 
+const textDecoder = new TextDecoder();
+
 // A valid and fully-dereferenced OpenAPI 3.x definition.
-import openAPIDefinition from "./definition.json";
+const openAPIDefinition = JSON.parse(textDecoder.decode(includeBytes('src/definition.json')));
 
 // If true, invalid requests will be rejected with a 400 response.
 // Otherwise, they will be forwarded to the origin after OpenAPI validation errors are logged.
@@ -16,7 +20,7 @@ addEventListener("fetch", (event) => event.respondWith(handleRequest(event)));
 // Validates all requests against an OpenAPI definition.
 async function handleRequest(event) {
   // Log service version
-  console.log("FASTLY_SERVICE_VERSION:", fastly.env.get('FASTLY_SERVICE_VERSION' || ''));
+  console.log("FASTLY_SERVICE_VERSION:", env('FASTLY_SERVICE_VERSION') || 'local');
   
   // Initialize an OpenAPI validator using the OpenAPI definition.
   // https://github.com/anttiviljami/openapi-backend/blob/master/DOCS.md#new-openapivalidatoropts
@@ -38,8 +42,6 @@ async function handleRequest(event) {
       path: url.pathname,
       // HTTP request headers
       headers: Object.fromEntries(req.headers.entries()),
-      // console.log(JSON.stringify(headers));
-      query: Object.fromEntries(url.searchParams.entries()),
       // parsed query parameters (optional), we also parse query params from the path property
       query: Object.fromEntries(url.searchParams.entries()),
       // the request body (optional), either raw buffer/string or a parsed object/array
