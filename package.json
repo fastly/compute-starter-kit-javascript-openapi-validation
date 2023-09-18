@@ -1,9 +1,4 @@
 {
-  "name": "compute-starter-kit-javascript-openapi-validation",
-  "version": "0.5.0",
-  "main": "src/index.js",
-  "author": "oss@fastly.com",
-  "license": "MIT",
   "engines": {
     "node": "^18"
   },
@@ -19,7 +14,7 @@
     "webpack-cli": "^5.0.1"
   },
   "dependencies": {
-    "@fastly/js-compute": "^3.0.0"
+    "@fastly/js-compute": "^3.4.0"
   },
   "scripts": {
     "prebuild": "webpack",
