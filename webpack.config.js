@@ -25,6 +25,7 @@ module.exports = {
       fs: require.resolve("core-js/"), // use the core js
       http: require.resolve("stream-http"),
       https: require.resolve("https-browserify"),
+      path: require.resolve("path-browserify"),
       buffer: require.resolve("buffer"),
       process: require.resolve("process"),
     },
@@ -43,6 +44,7 @@ module.exports = {
         return callback(null, 'commonjs ' + request);
       }
       callback();
-    }
+    },
+    'node-fetch'
   ],
 };
