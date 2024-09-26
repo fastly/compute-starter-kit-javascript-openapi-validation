@@ -3,6 +3,7 @@
     "node": "^18"
   },
   "devDependencies": {
+    "@fastly/cli": "^10.14.0",
     "buffer": "^6.0.3",
     "core-js": "^3.33.1",
     "g": "^2.0.1",
@@ -20,6 +21,7 @@
   "scripts": {
     "prebuild": "webpack",
     "build": "js-compute-runtime bin/index.js bin/main.wasm",
+    "start": "fastly compute serve",
     "deploy": "fastly compute publish"
   }
 }

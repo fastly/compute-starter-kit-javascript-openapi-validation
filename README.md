@@ -18,11 +18,27 @@ This starter kit makes it possible to define custom request handling logic at th
 
 ✅ Improved API security
 
-## Usage
+## Running the application
+
+To create an application using this starter kit, create a new directory for your application and switch to it, and then type the following command:
+
+```shell
+npm create @fastly/compute@latest -- --language=javascript --starter-kit=openapi-validation
+```
 
 Replace the contents of `src/definition.json` with your own OpenAPI 3.x definition, and change any references to `httpbin.org` to your origin in `fastly.toml` – by replacing the `url` in `local_server.backends.origin`, and the `address` (hostname) in `setup.backends.origin`.
 
-Then run `fastly compute serve` to try out this Compute app on your local machine, or `fastly compute publish` to publish a new Compute service.
+To build and run your new application in the local development environment, type the following command:
+
+```shell
+npm run start
+```
+
+To build and deploy your application to your Fastly account, type the following command. The first time you deploy the application, you will be prompted to create a new service in your account.
+
+```shell
+npm run deploy
+```
 
 ### Request handling
 

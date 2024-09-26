@@ -9,6 +9,7 @@ name = "OpenAPI Validation (JS)"
 
 [scripts]
   build = "npm run build"
+  post_init = "npm install"
 
 [local_server]
   [local_server.backends]
