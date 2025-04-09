@@ -1,7 +1,10 @@
-const path = require("path");
-const webpack = require("webpack");
+import { createRequire } from "module";
+import path from "path";
+import webpack from "webpack";
 
-module.exports = {
+const require = createRequire(import.meta.url);
+
+export default {
   entry: "./src/index.js",
   optimization: {
     minimize: true,
@@ -9,7 +12,7 @@ module.exports = {
   target: "webworker",
   output: {
     filename: "index.js",
-    path: path.resolve(__dirname, "bin"),
+    path: path.resolve(import.meta.dirname, "bin"),
     libraryTarget: "this",
   },
   module: {
