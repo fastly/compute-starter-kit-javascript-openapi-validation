@@ -5,7 +5,7 @@
     "@fastly/js-compute": "^3.33.2"
   },
   "devDependencies": {
-    "@fastly/cli": "^12.1.0",
+    "@fastly/cli": "^13.0.0",
     "buffer": "^6.0.3",
     "core-js": "^3.33.1",
     "g": "^2.0.1",
